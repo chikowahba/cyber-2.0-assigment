@@ -31,7 +31,7 @@ async function filterRequest(source, dest, port, payload){
    if(checkGroup[i].dest == object.dest && checkGroup[i].port != object.port)  counter++;
   }
 
-  if(counter > 5) writePortScanAttempt(source, dest, port, payload)
+  if(counter >= 5) writePortScanAttempt(source, dest, port, payload)
   else writeLegitimateRequest(source, dest, port, payload)
 }
 
